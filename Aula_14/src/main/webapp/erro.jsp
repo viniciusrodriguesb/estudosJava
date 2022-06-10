@@ -2,10 +2,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Menu</title>
+<title>Erro</title>
 </head>
 <body>
-	<h1>Bem vindo ao sistema!</h1>
-	<h2><%  %></h2>
+	<h1>Acesso negado!</h1>
 </body>
 </html>

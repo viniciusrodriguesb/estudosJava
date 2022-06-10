@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.UsuarioDAO;
 import modelo.Usuario;
@@ -29,12 +30,15 @@ public class loginServlet extends HttpServlet {
 		String senha = request.getParameter("senha");
 		Usuario u = null;
 
+		HttpSession session = request.getSession();
+
 		UsuarioDAO dao = new UsuarioDAO();
 
 		u = dao.consultarUsuario(usuario, senha);
 
 		if (u != null) {
-			response.sendRedirect("menu.jsp"+"?=u.getNome()");
+			session.setAttribute("usuarioSession", u.getNome());
+			response.sendRedirect("menu.jsp");
 		} else {
 			response.sendRedirect("erro.jsp");
 		}
