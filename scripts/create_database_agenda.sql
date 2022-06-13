@@ -10,5 +10,7 @@ CREATE TABLE tb_usuario (
 );
 
 INSERT INTO tb_usuario(nome, usuario, senha) VALUES('Administrador', 'admin', '12345');
+INSERT INTO tb_usuario(nome, usuario, senha) VALUES('Convidado', 'convidado', '12345');
+INSERT INTO tb_usuario(nome, usuario, senha) VALUES('Estagiário', 'estag', '12345');
 
 SELECT * FROM tb_usuario;

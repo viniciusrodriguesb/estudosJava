@@ -7,6 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Menu</title>
+
+<script>
+		function confirmarExclusao(id) {
+			var resposta = confirm("Confirma a exclusão?");
+					  
+			if (resposta == true) {
+			window.location.href = "ExcluirUsuarioServlet?id=" + id;
+		} 
+	}
+</script>
 </head>
 <body>
 
@@ -49,11 +59,11 @@
 				<%=usuario.getUsuario()%>
 			</td>
 			<td>
-				<a href="editar.jsp?id=<%=usuario.getId()%>"><img src=https://w7.pngwing.com/pngs/740/67/png-transparent-computer-icons-icon-design-edit-angle-computer-data-thumbnail.png width="24px"/></a>
+				<a href="alterar.jsp?id=<%=usuario.getId()%>"><img src=https://w7.pngwing.com/pngs/740/67/png-transparent-computer-icons-icon-design-edit-angle-computer-data-thumbnail.png width="24px"/></a>
 			</td>
-			<td>
-				<a href="delete.jsp?id=<%=usuario.getId()%>"><img src="https://w7.pngwing.com/pngs/953/119/png-transparent-computer-icons-delete-icon-cdr-angle-text.png" width="24px"/></a>
-			</td>												<!-- inserir este link no banco de dados e chamar o link do banco aqui   -->	
+			<td>	
+				<img src="https://w7.pngwing.com/pngs/953/119/png-transparent-computer-icons-delete-icon-cdr-angle-text.png" width="24px" onclick="confirmarExclusao(<%=usuario.getId()%>)"/>
+			</td>	
 			</tr>
 		<%
 		}
@@ -62,6 +72,7 @@
 		<div>
 			<nav>
 				<ul>
+					<li><a href="cadastro.jsp">Cadastrar Usuário</a></li>
 					<li><a href="index.html">Logout</a></li>
 				</ul>
 			</nav>
