@@ -59,7 +59,7 @@
 				<%=usuario.getUsuario()%>
 			</td>
 			<td>
-				<a href="alterar.jsp?id=<%=usuario.getId()%>"><img src=https://w7.pngwing.com/pngs/740/67/png-transparent-computer-icons-icon-design-edit-angle-computer-data-thumbnail.png width="24px"/></a>
+				<a href="PrepararAlteracaoUsuario?id=<%=usuario.getId()%>"><img src=https://w7.pngwing.com/pngs/740/67/png-transparent-computer-icons-icon-design-edit-angle-computer-data-thumbnail.png width="24px"/></a>
 			</td>
 			<td>	
 				<img src="https://w7.pngwing.com/pngs/953/119/png-transparent-computer-icons-delete-icon-cdr-angle-text.png" width="24px" onclick="confirmarExclusao(<%=usuario.getId()%>)"/>

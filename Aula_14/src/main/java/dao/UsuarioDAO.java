@@ -10,6 +10,35 @@ import modelo.Usuario;
 
 public class UsuarioDAO {
 	Connection cnx = null;
+	
+	// FAZER CONSULTA POR ID
+	public Usuario buscarPorId(int id) {
+		Usuario usuario = null;
+		ResultSet rs = null;
+		cnx = DAO.createConnection();
+
+		String sql = "SELECT * FROM tb_usuario WHERE id=?";
+
+		try {
+			PreparedStatement ps = cnx.prepareStatement(sql);
+
+			ps.setInt(1, id);
+
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+				usuario = new Usuario();
+
+				usuario.setId(rs.getInt("id"));
+				usuario.setNome(rs.getString("nome"));
+				usuario.setUsuario(rs.getString("usuario"));
+				usuario.setSenha(rs.getString("senha"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return usuario;
+	}
 
 	// ALTERAÇÃO DE DADOS
 	public boolean alterarUsuario(Usuario usuario) {

@@ -16,8 +16,12 @@ public class UsuarioServico {
 	public boolean incluir(Usuario usr) {
 		return usuario.incluirUsuario(usr);
 	}
-	
+
 	public boolean alterar(Usuario usr) {
 		return usuario.alterarUsuario(usr);
+	}
+
+	public Usuario buscarPorId(int id) {
+		return usuario.buscarPorId(id);
 	}
 }
