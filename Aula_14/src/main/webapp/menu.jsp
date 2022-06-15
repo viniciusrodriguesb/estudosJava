@@ -73,7 +73,7 @@
 			<nav>
 				<ul>
 					<li><a href="cadastro.jsp">Cadastrar Usuário</a></li>
-					<li><a href="index.html">Logout</a></li>
+					<li><a href="LogoutServlet">Logout</a></li>
 				</ul>
 			</nav>
 		</div>
